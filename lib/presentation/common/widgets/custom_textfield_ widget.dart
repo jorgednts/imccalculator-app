@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class CustomTextFiedlWidget extends StatelessWidget {
-  const CustomTextFiedlWidget({
-    Key? key,
+class CustomTextFieldWidget extends StatelessWidget {
+  const CustomTextFieldWidget({
     required this.hintText,
+    Key? key,
     this.obscureText = false,
   }) : super(key: key);
 
@@ -11,8 +11,7 @@ class CustomTextFiedlWidget extends StatelessWidget {
   final bool obscureText;
 
   @override
-  Widget build(BuildContext context) {
-    return SizedBox(
+  Widget build(BuildContext context) => SizedBox(
       width: 300,
       height: 50,
       child: TextField(
@@ -30,5 +29,4 @@ class CustomTextFiedlWidget extends StatelessWidget {
         ),
       ),
     );
-  }
 }

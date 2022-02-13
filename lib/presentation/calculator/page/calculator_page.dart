@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:imc_calculator/controller/imc_controller.dart';
+import '../controller/bmi_controller.dart';
 
 class CalculatorPage extends StatefulWidget {
   const CalculatorPage({Key? key}) : super(key: key);
@@ -11,7 +11,7 @@ class CalculatorPage extends StatefulWidget {
 class _CalculatorPageState extends State<CalculatorPage> {
   final TextEditingController heightController = TextEditingController();
   final TextEditingController weightController = TextEditingController();
-  String textInfo = "Informe seus dados";
+  String textInfo = 'Informe seus dados';
   late IMCController imcController;
   @override
   void initState() {
@@ -20,8 +20,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+  Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
           backgroundColor: Theme.of(context).primaryColor,
           centerTitle: true,
@@ -31,11 +30,11 @@ class _CalculatorPageState extends State<CalculatorPage> {
           title: const Text('Calculadora IMC'),
           actions: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               child: GestureDetector(
                 onTap: () {
                   setState(() {
-                    textInfo = "Informe seus dados";
+                    textInfo = 'Informe seus dados';
                     heightController.clear();
                     weightController.clear();
                   });
@@ -87,12 +86,12 @@ class _CalculatorPageState extends State<CalculatorPage> {
                         textInfo = imcController.textInfo;
                       });
                     },
-                    child: const Text('Calcular'),
                     style: ElevatedButton.styleFrom(
                       primary: Theme.of(context).primaryColor,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25)),
                     ),
+                    child: const Text('Calcular'),
                   ),
                 ),
                 Container(
@@ -106,5 +105,4 @@ class _CalculatorPageState extends State<CalculatorPage> {
             ),
           ),
         ));
-  }
 }

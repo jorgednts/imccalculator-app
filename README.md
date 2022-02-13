@@ -1,1 +1,1 @@
-App Flutter Calculadora de IMC
+Flutter App BMI Calculator

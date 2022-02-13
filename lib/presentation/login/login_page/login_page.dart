@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'widgets/custom_textfield_ widget.dart';
+import '../../common/widgets/custom_textfield_%20widget.dart';
+
+
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -10,8 +12,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+  Widget build(BuildContext context) => Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       body: SingleChildScrollView(
         child: Center(
@@ -34,12 +35,12 @@ class _LoginPageState extends State<LoginPage> {
                   )),
               Container(
                   margin: const EdgeInsets.only(top: 43),
-                  child: const CustomTextFiedlWidget(
+                  child: const CustomTextFieldWidget(
                     hintText: 'usuário',
                   )),
               Container(
                   margin: const EdgeInsets.only(top: 20),
-                  child: const CustomTextFiedlWidget(
+                  child: const CustomTextFieldWidget(
                     hintText: 'senha',
                     obscureText: true,
                   )),
@@ -53,12 +54,12 @@ class _LoginPageState extends State<LoginPage> {
                   onPressed: () {
                     Navigator.pushReplacementNamed(context, '/calculator');
                   },
-                  child: const Text('ENTRAR'),
                   style: ElevatedButton.styleFrom(
                     primary: Colors.black,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(25)),
                   ),
+                  child: const Text('ENTRAR'),
                 ),
               )
             ],
@@ -66,5 +67,4 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
-  }
 }
